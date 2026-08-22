@@ -1,0 +1,15 @@
+# 机密 —— 永远不进仓库
+.credentials.yaml
+.env
+
+# 运行时与生成物
+storages/
+sessions/
+node_modules/
+profiles/*/node_modules/
+profiles/*/cordis.yml
+profiles/*/pnpm-lock.yaml
+
+# 杂项
+.DS_Store
+*.log
