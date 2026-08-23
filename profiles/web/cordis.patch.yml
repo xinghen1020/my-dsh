@@ -1,4 +1,14 @@
-# Your patch layer for this dsh profile, applied after every bundle layer:
-# a top-level YAML array of loader patch entries (id-targeted config
-# overrides, disables, and insert lists; `!!js` expressions allowed).
-[]
+# my-dsh web profile 补丁层
+#
+# 2026-08-23:
+#  1. Tailscale Serve 已启用 (https://mac-mini.tail23a84f.ts.net)
+#     → dsh-pocket 的公网/局域网远程访问已冗余, 禁用其代理 (移除 0.0.0.0:3081 监听)
+#     → 恢复: 删除下面 dsh-pocket 条目并重启
+#  2. serve 域名加入 /api 信任栅栏, 否则经 tailnet 域名访问会被 403 拒绝
+- id: connection
+  config:
+    trustedHosts:
+      - mac-mini.tail23a84f.ts.net
+
+- id: dsh-pocket
+  disabled: true
