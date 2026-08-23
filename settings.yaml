@@ -1,4 +1,4 @@
 ui-onboarding:
   welcomeNoticeVersion: 2026-08-13.1
 agent-presets:
-  default: minimal
+  default: standard
