@@ -1,0 +1,6 @@
+# dsh bundle patch: inserts this plugin into a profile's layer stack.
+# The entry resolves from the profile's node_modules (`dsh plugin add` records
+# the dependency there); the id is stable so later patch layers can target it.
+- insert:
+    - id: dsh-skill-center
+      name: 'dsh-skill-center'

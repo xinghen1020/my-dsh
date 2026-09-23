@@ -1,0 +1,780 @@
+<body>
+       <fav-full-app><template shadowrootmode="open">
+   <fav-full-page><template shadowrootmode="open">
+   <side-pane-layout id="SidePaneLayout" titlename="收藏夹"><template shadowrootmode="open">
+  
+  <div class="side-pane-layout">
+      
+  <div class="fold-contrainer">
+    <fluent-drawer position="start" size="small" type="modal"><template shadowrootmode="open">
+    <dialog class="dialog" part="dialog" size="small" position="start" aria-modal="true" role="dialog">
+      <slot></slot>
+    </dialog>
+  </template>
+      <fluent-drawer-body><template shadowrootmode="open">
+    <div class="header" part="header">
+      <slot name="title"></slot>
+      <slot name="close"></slot>
+    </div>
+    <div class="content" part="content">
+      <slot></slot>
+    </div>
+    <div class="footer" part="footer">
+      <slot name="footer"></slot>
+    </div>
+  </template>
+        <span slot="title">
+  <div class="header-left flex-align-center">
+    <fluent-button size="large" icon-only="" appearance="subtle" title="Favorites menu" class="toggle-btn" tabindex="0"><template shadowrootmode="open">
+       <slot name="start"></slot> 
+      <span class="content" part="content">
+        <slot></slot>
+      </span>
+       <slot name="end"></slot> 
+    </template>
+      
+ <svg viewBox="0 0 16 10" width="16px" height="10px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 1H16V0H0V1ZM0 9H16V8H0V9ZM0 4.99219H16V4H0V4.99219Z"></path>
+  </svg>
+
+    </fluent-button>
+    <h1 class="title">收藏夹</h1>
+  </div>
+</span>
+        <slot name="navigation"></slot>
+      </fluent-drawer-body>
+    </fluent-drawer>
+    <header class="flex-align-center">
+      
+  <div class="header-left flex-align-center">
+    <fluent-button size="large" icon-only="" appearance="subtle" title="Favorites menu" class="toggle-btn" tabindex="0"><template shadowrootmode="open">
+       <slot name="start"></slot> 
+      <span class="content" part="content">
+        <slot></slot>
+      </span>
+       <slot name="end"></slot> 
+    </template>
+      
+ <svg viewBox="0 0 16 10" width="16px" height="10px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 1H16V0H0V1ZM0 9H16V8H0V9ZM0 4.99219H16V4H0V4.99219Z"></path>
+  </svg>
+
+    </fluent-button>
+    <h1 class="title">收藏夹</h1>
+  </div>
+
+      <div class="search-container">
+        
+  <fav-search-input><template shadowrootmode="open">
+  <fluent-text-input autocomplete="off" part="search-input" role="combobox" aria-controls="search-list" aria-autocomplete="list" tabindex="0" aria-activedescendant="" aria-label="搜索收藏夹" placeholder="搜索收藏夹" title="搜索收藏夹" type="text" current-value="" aria-expanded=""><template shadowrootmode="open" shadowrootdelegatesfocus="">
+      <label part="label" for="control" class="label">
+        <slot></slot>
+      </label>
+      <div class="root" part="root">
+         <slot name="start"></slot> 
+        <input class="control" part="control" id="control" autocomplete="off" placeholder="搜索收藏夹" type="text" value="">
+         <slot name="end"></slot> 
+      </div>
+    </template>
+    <span aria-label="搜索收藏夹"></span>
+    <span slot="start" class="search-icon">
+  <svg aria-hidden="true" fill="currentColor" width="20" height="20" viewBox="0 0 20 20"><path d="M8.5 3a5.5 5.5 0 014.23 9.02l4.12 4.13a.5.5 0 01-.63.76l-.07-.06-4.13-4.12A5.5 5.5 0 118.5 3zm0 1a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" fill-rule="nonzero"></path></svg>
+</span>
+    
+  </fluent-text-input>
+</template></fav-search-input>
+
+      </div>
+    </header>
+    <div class="main-list-container" role="main">
+      <slot></slot>
+    </div>
+  </div>
+
+  </div>
+  <fav-modal-dialog><template shadowrootmode="open"><!---->
+  
+</template></fav-modal-dialog>
+</template>
+      <div slot="navigation">
+         
+ <fluent-tree size="medium" focusgroup="menu inline block nowrap nomemory"><template shadowrootmode="open">
+    <slot></slot>
+  </template>
+    <!---->
+    
+      <fluent-tree-item title="收藏夹栏" data-bookmark-id="1" data-is-folder="true" data-is-hover="false" draggable="false" tabindex="0" expanded=""><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        
+              <span aria-hidden="true" class="icon-box" slot="start">
+                
+  <svg class="icon-star" fill="currentColor" width="20" height="20" viewBox="0 0 20 20"><path d="M9.1 2.9a1 1 0 011.8 0l1.93 3.91 4.31.63a1 1 0 01.56 1.7l-3.13 3.05.74 4.3a1 1 0 01-1.45 1.05L10 15.51l-3.86 2.03a1 1 0 01-1.45-1.05l.74-4.3L2.3 9.14a1 1 0 01.56-1.7l4.31-.63L9.1 2.9zm.9.44L8.07 7.25a1 1 0 01-.75.55L3 8.43l3.12 3.04a1 1 0 01.3.89l-.75 4.3 3.86-2.03a1 1 0 01.94 0l3.86 2.03-.74-4.3a1 1 0 01.29-.89L17 8.43l-4.32-.63a1 1 0 01-.75-.55L10 3.35z" fill="currentColor"></path></svg>
+
+              </span>
+            
+        <span class="title">收藏夹栏</span>
+        <!---->
+    
+      <fluent-tree-item title="工具" data-bookmark-id="2" data-is-folder="true" data-is-hover="false" draggable="true" tabindex="0" slot="item" expanded="" empty="" data-indent="1"><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        
+              <span aria-hidden="true" class="icon-box" slot="start">
+                
+  <svg class="icon-folder-monoline" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" classname="icon-folder"><path d="M7.17 3c.27 0 .53.07.76.21l.14.09 1.6 1.2h5.83a2.5 2.5 0 012.48 2.17l.01.17L18 7v7.5a2.5 2.5 0 01-2.34 2.5H4.5A2.5 2.5 0 012 14.66V5.5A2.5 2.5 0 014.34 3h2.83zm.99 4.03a1.5 1.5 0 01-.94.46l-.15.01H3v7c0 .78.6 1.42 1.36 1.5H15.5c.78 0 1.42-.6 1.5-1.36V7c0-.78-.6-1.42-1.36-1.5H9.62L8.16 7.03zM7.16 4H4.5c-.78 0-1.42.6-1.5 1.36V6.5h4.07a.5.5 0 00.3-.1l.06-.06L8.7 5.02 7.47 4.1a.5.5 0 00-.22-.1h-.08z" fillrule="nonzero"></path></svg>
+
+              </span>
+            
+        <span class="title">工具</span>
+        <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!--fast-e6t4h9{fast-e6t4h9-224}fast-e6t4h9-->
+      </fluent-tree-item>
+    
+  <!---->
+    
+      <fluent-tree-item title="手册" data-bookmark-id="10" data-is-folder="true" data-is-hover="false" draggable="true" tabindex="0" slot="item" empty="" data-indent="1"><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        
+              <span aria-hidden="true" class="icon-box" slot="start">
+                
+  <svg class="icon-folder-monoline" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" classname="icon-folder"><path d="M7.17 3c.27 0 .53.07.76.21l.14.09 1.6 1.2h5.83a2.5 2.5 0 012.48 2.17l.01.17L18 7v7.5a2.5 2.5 0 01-2.34 2.5H4.5A2.5 2.5 0 012 14.66V5.5A2.5 2.5 0 014.34 3h2.83zm.99 4.03a1.5 1.5 0 01-.94.46l-.15.01H3v7c0 .78.6 1.42 1.36 1.5H15.5c.78 0 1.42-.6 1.5-1.36V7c0-.78-.6-1.42-1.36-1.5H9.62L8.16 7.03zM7.16 4H4.5c-.78 0-1.42.6-1.5 1.36V6.5h4.07a.5.5 0 00.3-.1l.06-.06L8.7 5.02 7.47 4.1a.5.5 0 00-.22-.1h-.08z" fillrule="nonzero"></path></svg>
+
+              </span>
+            
+        <span class="title">手册</span>
+        <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!--fast-e6t4h9{fast-e6t4h9-224}fast-e6t4h9-->
+      </fluent-tree-item>
+    
+  <!---->
+    
+      <fluent-tree-item title="后台" data-bookmark-id="22" data-is-folder="true" data-is-hover="false" draggable="true" tabindex="0" slot="item" data-indent="1" selected="" focusgroupstart=""><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        
+              <span aria-hidden="true" class="icon-box" slot="start">
+                
+  <svg class="icon-folder-monoline" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" classname="icon-folder"><path d="M7.17 3c.27 0 .53.07.76.21l.14.09 1.6 1.2h5.83a2.5 2.5 0 012.48 2.17l.01.17L18 7v7.5a2.5 2.5 0 01-2.34 2.5H4.5A2.5 2.5 0 012 14.66V5.5A2.5 2.5 0 014.34 3h2.83zm.99 4.03a1.5 1.5 0 01-.94.46l-.15.01H3v7c0 .78.6 1.42 1.36 1.5H15.5c.78 0 1.42-.6 1.5-1.36V7c0-.78-.6-1.42-1.36-1.5H9.62L8.16 7.03zM7.16 4H4.5c-.78 0-1.42.6-1.5 1.36V6.5h4.07a.5.5 0 00.3-.1l.06-.06L8.7 5.02 7.47 4.1a.5.5 0 00-.22-.1h-.08z" fillrule="nonzero"></path></svg>
+
+              </span>
+            
+        <span class="title">后台</span>
+        <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+      <fluent-tree-item title="More" data-bookmark-id="48" data-is-folder="true" data-is-hover="false" draggable="true" tabindex="0" slot="item" empty="" data-indent="2" focusgroup="none"><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        
+              <span aria-hidden="true" class="icon-box" slot="start">
+                
+  <svg class="icon-folder-monoline" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" classname="icon-folder"><path d="M7.17 3c.27 0 .53.07.76.21l.14.09 1.6 1.2h5.83a2.5 2.5 0 012.48 2.17l.01.17L18 7v7.5a2.5 2.5 0 01-2.34 2.5H4.5A2.5 2.5 0 012 14.66V5.5A2.5 2.5 0 014.34 3h2.83zm.99 4.03a1.5 1.5 0 01-.94.46l-.15.01H3v7c0 .78.6 1.42 1.36 1.5H15.5c.78 0 1.42-.6 1.5-1.36V7c0-.78-.6-1.42-1.36-1.5H9.62L8.16 7.03zM7.16 4H4.5c-.78 0-1.42.6-1.5 1.36V6.5h4.07a.5.5 0 00.3-.1l.06-.06L8.7 5.02 7.47 4.1a.5.5 0 00-.22-.1h-.08z" fillrule="nonzero"></path></svg>
+
+              </span>
+            
+        <span class="title">More</span>
+        <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!--fast-e6t4h9{fast-e6t4h9-272}fast-e6t4h9-->
+      </fluent-tree-item>
+    
+  <!--fast-e6t4h9{fast-e6t4h9-224}fast-e6t4h9-->
+      </fluent-tree-item>
+    
+  <!---->
+    
+      <fluent-tree-item title="AiStudio" data-bookmark-id="90" data-is-folder="true" data-is-hover="false" draggable="true" tabindex="0" slot="item" empty="" data-indent="1"><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        
+              <span aria-hidden="true" class="icon-box" slot="start">
+                
+  <svg class="icon-folder-monoline" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" classname="icon-folder"><path d="M7.17 3c.27 0 .53.07.76.21l.14.09 1.6 1.2h5.83a2.5 2.5 0 012.48 2.17l.01.17L18 7v7.5a2.5 2.5 0 01-2.34 2.5H4.5A2.5 2.5 0 012 14.66V5.5A2.5 2.5 0 014.34 3h2.83zm.99 4.03a1.5 1.5 0 01-.94.46l-.15.01H3v7c0 .78.6 1.42 1.36 1.5H15.5c.78 0 1.42-.6 1.5-1.36V7c0-.78-.6-1.42-1.36-1.5H9.62L8.16 7.03zM7.16 4H4.5c-.78 0-1.42.6-1.5 1.36V6.5h4.07a.5.5 0 00.3-.1l.06-.06L8.7 5.02 7.47 4.1a.5.5 0 00-.22-.1h-.08z" fillrule="nonzero"></path></svg>
+
+              </span>
+            
+        <span class="title">AiStudio</span>
+        <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!--fast-e6t4h9{fast-e6t4h9-224}fast-e6t4h9-->
+      </fluent-tree-item>
+    
+  <!---->
+    
+      <fluent-tree-item title="常用" data-bookmark-id="89" data-is-folder="true" data-is-hover="false" draggable="true" tabindex="0" slot="item" empty="" data-indent="1"><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        
+              <span aria-hidden="true" class="icon-box" slot="start">
+                
+  <svg class="icon-folder-monoline" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" classname="icon-folder"><path d="M7.17 3c.27 0 .53.07.76.21l.14.09 1.6 1.2h5.83a2.5 2.5 0 012.48 2.17l.01.17L18 7v7.5a2.5 2.5 0 01-2.34 2.5H4.5A2.5 2.5 0 012 14.66V5.5A2.5 2.5 0 014.34 3h2.83zm.99 4.03a1.5 1.5 0 01-.94.46l-.15.01H3v7c0 .78.6 1.42 1.36 1.5H15.5c.78 0 1.42-.6 1.5-1.36V7c0-.78-.6-1.42-1.36-1.5H9.62L8.16 7.03zM7.16 4H4.5c-.78 0-1.42.6-1.5 1.36V6.5h4.07a.5.5 0 00.3-.1l.06-.06L8.7 5.02 7.47 4.1a.5.5 0 00-.22-.1h-.08z" fillrule="nonzero"></path></svg>
+
+              </span>
+            
+        <span class="title">常用</span>
+        <!---->
+    
+  <!--fast-e6t4h9{fast-e6t4h9-224}fast-e6t4h9-->
+      </fluent-tree-item>
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!---->
+    
+  <!--fast-e6t4h9{fast-e6t4h9-202}fast-e6t4h9-->
+      </fluent-tree-item>
+    
+  <!---->
+    
+      <fluent-tree-item title="其他收藏夹" data-bookmark-id="35" data-is-folder="true" data-is-hover="false" draggable="false" tabindex="0" empty=""><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        
+              <span aria-hidden="true" class="icon-box" slot="start">
+                
+  <svg class="icon-folder-monoline" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" classname="icon-folder"><path d="M7.17 3c.27 0 .53.07.76.21l.14.09 1.6 1.2h5.83a2.5 2.5 0 012.48 2.17l.01.17L18 7v7.5a2.5 2.5 0 01-2.34 2.5H4.5A2.5 2.5 0 012 14.66V5.5A2.5 2.5 0 014.34 3h2.83zm.99 4.03a1.5 1.5 0 01-.94.46l-.15.01H3v7c0 .78.6 1.42 1.36 1.5H15.5c.78 0 1.42-.6 1.5-1.36V7c0-.78-.6-1.42-1.36-1.5H9.62L8.16 7.03zM7.16 4H4.5c-.78 0-1.42.6-1.5 1.36V6.5h4.07a.5.5 0 00.3-.1l.06-.06L8.7 5.02 7.47 4.1a.5.5 0 00-.22-.1h-.08z" fillrule="nonzero"></path></svg>
+
+              </span>
+            
+        <span class="title">其他收藏夹</span>
+        <!--fast-e6t4h9{fast-e6t4h9-202}fast-e6t4h9-->
+      </fluent-tree-item>
+    
+  <!--fast-e6t4h9{fast-e6t4h9-182}fast-e6t4h9-->
+  
+  </fluent-tree>
+  <div class="preview-card">
+    
+              <span aria-hidden="true" class="icon-box" slot="start" style="background-image: image-set(url(&quot;edge://favicon2/?size=16&amp;scaleFactor=1x&amp;pageUrl=&amp;allowGoogleServerFallback=0&quot;) 1x, url(&quot;edge://favicon2/?size=16&amp;scaleFactor=2x&amp;pageUrl=&amp;allowGoogleServerFallback=0&quot;) 2x)"></span>
+            
+    <span class="preview-title"></span>
+    
+  </div>
+
+      </div>
+      <!-- Main content -->
+      <fav-search-view><template shadowrootmode="open"><!---->
+  
+  <div class="fav-search-view scrollbar">
+    <fav-toolbar-view><template shadowrootmode="open">
+  <div class="fav-toolbar-view">
+    <fav-header-full-page><template shadowrootmode="open">
+  <hub-header class="fav-header"><template shadowrootmode="open">
+  <slot name="title"></slot>
+  <slot name="toolbar"></slot>
+</template>
+    <h2 slot="title" class="header-title">后台</h2>
+    
+      <hub-toolbar slot="toolbar" aria-labelledby="open-full-page-button" aria-orientation="horizontal" role="toolbar"><template shadowrootmode="open">
+    <slot></slot>
+  </template>
+        
+        <fluent-button tabindex="-1" class="adding-this-page-button" appearance="subtle" title="添加收藏夹" icon-only="true"><template shadowrootmode="open">
+       <slot name="start"></slot> 
+      <span class="content" part="content">
+        <slot></slot>
+      </span>
+       <slot name="end"></slot> 
+    </template>
+          <!---->
+  <svg aria-hidden="true" fill="currentColor" width="20" height="20" viewBox="0 0 20 20"><path d="M9.1 2.9a1 1 0 011.8 0l1.93 3.91 4.31.63a1 1 0 01.56 1.7l-.55.54a5.47 5.47 0 00-1-.43l.85-.82-4.32-.63a1 1 0 01-.75-.55L10 3.35l-1.93 3.9a1 1 0 01-.75.55L3 8.43l3.12 3.04a1 1 0 01.29.89l-.74 4.3 3.34-1.76c.03.36.09.7.18 1.04l-3.05 1.6a1 1 0 01-1.45-1.05l.73-4.3L2.3 9.14a1 1 0 01.56-1.7l4.31-.63L9.1 2.9z"></path><path d="M19 14.5a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm-4-2a.5.5 0 00-1 0V14h-1.5a.5.5 0 000 1H14v1.5a.5.5 0 001 0V15h1.5a.5.5 0 000-1H15v-1.5z"></path></svg>
+        </fluent-button>
+        <fluent-button tabindex="-1" class="adding-folder-button" appearance="subtle" title="添加文件夹" icon-only="true"><template shadowrootmode="open">
+       <slot name="start"></slot> 
+      <span class="content" part="content">
+        <slot></slot>
+      </span>
+       <slot name="end"></slot> 
+    </template>
+          <!---->
+  <svg aria-hidden="true" fill="currentColor" width="20" height="20" viewBox="0 0 20 20"><path d="M4.5 3A2.5 2.5 0 002 5.5v9A2.5 2.5 0 004.5 17h5.1c-.16-.32-.3-.65-.4-1H4.5A1.5 1.5 0 013 14.5v-7h4.07c.41 0 .8-.17 1.09-.47L9.62 5.5h5.88c.83 0 1.5.67 1.5 1.5v2.6c.36.18.7.4 1 .66V7a2.5 2.5 0 00-2.5-2.5H9.67l-1.6-1.2a1.5 1.5 0 00-.9-.3H4.5zM3 5.5C3 4.67 3.67 4 4.5 4h2.67c.1 0 .21.04.3.1l1.22.92-1.26 1.32a.5.5 0 01-.36.16H3v-1zm16 9a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm-4-2a.5.5 0 00-1 0V14h-1.5a.5.5 0 000 1H14v1.5a.5.5 0 001 0V15h1.5a.5.5 0 000-1H15v-1.5z" fill-rule="nonzero"></path></svg>
+
+        </fluent-button>
+        <fluent-button tabindex="-1" appearance="subtle" icon-only="" class="overflow-button" title="更多选项"><template shadowrootmode="open">
+       <slot name="start"></slot> 
+      <span class="content" part="content">
+        <slot></slot>
+      </span>
+       <slot name="end"></slot> 
+    </template>
+  <svg aria-hidden="true" fill="currentColor" width="20" height="20" viewBox="0 0 20 20"><path d="M6 10a1.25 1.25 0 11-2.5 0A1.25 1.25 0 016 10z"></path><path d="M11.25 10a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"></path><path d="M15.25 11.25a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z"></path></svg>
+</fluent-button>
+      </hub-toolbar>
+    
+  </hub-header>
+  <slot></slot>
+</template></fav-header-full-page>
+  </div>
+</template></fav-toolbar-view>
+      <section class="results-section">
+        
+
+        
+          <fluent-tree size="medium" class="search-list" data-bookmark-id="22" focusgroup="menu inline block nowrap nomemory"><template shadowrootmode="open">
+    <slot></slot>
+  </template>
+              
+    <fluent-tree-item size="medium" title="mu77-正式后台
+http://admin.mu77.com/#/user/login" data-bookmark-id="23" data-is-folder="false" data-is-selected="false" aria-selected="false" draggable="true" tabindex="0" empty=""><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        <fluent-field label-position="after" slot="start" class="">
+          <fluent-checkbox slot="input" data-is-selected="false" id="per-fav-item-23" tabindex="0"><template shadowrootmode="open">
+            
+    <svg fill="currentColor" aria-hidden="true" class="checked-indicator" width="1em" height="1em" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04Z" fill="currentColor"></path>
+    </svg>
+ 
+    <span class="indeterminate-indicator"></span>
+
+        </template>
+          </fluent-checkbox>
+          <label slot="label" for="per-fav-item-23">
+            <!---->
+  
+  
+      <span class="icon-box" slot="start" style="background-image: image-set(url(&quot;edge://favicon2/?size=16&amp;scaleFactor=1x&amp;pageUrl=http%3A%2F%2Fadmin.mu77.com%2F%23%2Fuser%2Flogin&amp;allowGoogleServerFallback=0&amp;pageTitle=mu77-%E6%AD%A3%E5%BC%8F%E5%90%8E%E5%8F%B0&quot;) 1x, url(&quot;edge://favicon2/?size=16&amp;scaleFactor=2x&amp;pageUrl=http%3A%2F%2Fadmin.mu77.com%2F%23%2Fuser%2Flogin&amp;allowGoogleServerFallback=0&amp;pageTitle=mu77-%E6%AD%A3%E5%BC%8F%E5%90%8E%E5%8F%B0&quot;) 2x)"></span>
+    
+              <a class="title fav-url" href="#" target="_blank" tabindex="-1">mu77-正式后台</a><span class="url">http://admin.mu77.com/#/user/login</span>
+          </label>
+        </fluent-field>
+        <fluent-button icon-only="" size="medium" appearance="subtle" slot="aside" title="Delete" aria-label="mu77-正式后台" tabindex="0"><template shadowrootmode="open">
+       <slot name="start"></slot> 
+      <span class="content" part="content">
+        <slot></slot>
+      </span>
+       <slot name="end"></slot> 
+    </template>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20" class="listItemCard_closeIcon-0-1-1139" aria-hidden="true"><path d="M4.09 4.22l.06-.07a.5.5 0 01.63-.06l.07.06L10 9.29l5.15-5.14a.5.5 0 01.63-.06l.07.06c.18.17.2.44.06.63l-.06.07L10.71 10l5.14 5.15c.18.17.2.44.06.63l-.06.07a.5.5 0 01-.63.06l-.07-.06L10 10.71l-5.15 5.14a.5.5 0 01-.63.06l-.07-.06a.5.5 0 01-.06-.63l.06-.07L9.29 10 4.15 4.85a.5.5 0 01-.06-.63l.06-.07-.06.07z" fill-rule="nonzero"></path></svg>
+        </fluent-button>
+      </fluent-tree-item>
+  
+    <fluent-tree-item size="medium" title="mu77-开发后台
+http://admin-cn.tsgame.com.cn/#/welcome" data-bookmark-id="24" data-is-folder="false" data-is-selected="false" aria-selected="false" draggable="true" tabindex="0" empty=""><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        <fluent-field label-position="after" slot="start" class="">
+          <fluent-checkbox slot="input" data-is-selected="false" id="per-fav-item-24" tabindex="0"><template shadowrootmode="open">
+            
+    <svg fill="currentColor" aria-hidden="true" class="checked-indicator" width="1em" height="1em" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04Z" fill="currentColor"></path>
+    </svg>
+ 
+    <span class="indeterminate-indicator"></span>
+
+        </template>
+          </fluent-checkbox>
+          <label slot="label" for="per-fav-item-24">
+            <!---->
+  
+  
+      <span class="icon-box" slot="start" style="background-image: image-set(url(&quot;edge://favicon2/?size=16&amp;scaleFactor=1x&amp;pageUrl=http%3A%2F%2Fadmin-cn.tsgame.com.cn%2F%23%2Fwelcome&amp;allowGoogleServerFallback=0&amp;pageTitle=mu77-%E5%BC%80%E5%8F%91%E5%90%8E%E5%8F%B0&quot;) 1x, url(&quot;edge://favicon2/?size=16&amp;scaleFactor=2x&amp;pageUrl=http%3A%2F%2Fadmin-cn.tsgame.com.cn%2F%23%2Fwelcome&amp;allowGoogleServerFallback=0&amp;pageTitle=mu77-%E5%BC%80%E5%8F%91%E5%90%8E%E5%8F%B0&quot;) 2x)"></span>
+    
+              <a class="title fav-url" href="#" target="_blank" tabindex="-1">mu77-开发后台</a><span class="url">http://admin-cn.tsgame.com.cn/#/welcome</span>
+          </label>
+        </fluent-field>
+        <fluent-button icon-only="" size="medium" appearance="subtle" slot="aside" title="Delete" aria-label="mu77-开发后台" tabindex="0"><template shadowrootmode="open">
+       <slot name="start"></slot> 
+      <span class="content" part="content">
+        <slot></slot>
+      </span>
+       <slot name="end"></slot> 
+    </template>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20" class="listItemCard_closeIcon-0-1-1139" aria-hidden="true"><path d="M4.09 4.22l.06-.07a.5.5 0 01.63-.06l.07.06L10 9.29l5.15-5.14a.5.5 0 01.63-.06l.07.06c.18.17.2.44.06.63l-.06.07L10.71 10l5.14 5.15c.18.17.2.44.06.63l-.06.07a.5.5 0 01-.63.06l-.07-.06L10 10.71l-5.15 5.14a.5.5 0 01-.63.06l-.07-.06a.5.5 0 01-.06-.63l.06-.07L9.29 10 4.15 4.85a.5.5 0 01-.06-.63l.06-.07-.06.07z" fill-rule="nonzero"></path></svg>
+        </fluent-button>
+      </fluent-tree-item>
+  
+    <fluent-tree-item size="medium" title="Elastic
+http://47.102.204.218:5601/app/home#/" data-bookmark-id="33" data-is-folder="false" data-is-selected="false" aria-selected="false" draggable="true" tabindex="0" empty=""><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        <fluent-field label-position="after" slot="start" class="">
+          <fluent-checkbox slot="input" data-is-selected="false" id="per-fav-item-33" tabindex="0"><template shadowrootmode="open">
+            
+    <svg fill="currentColor" aria-hidden="true" class="checked-indicator" width="1em" height="1em" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04Z" fill="currentColor"></path>
+    </svg>
+ 
+    <span class="indeterminate-indicator"></span>
+
+        </template>
+          </fluent-checkbox>
+          <label slot="label" for="per-fav-item-33">
+            <!---->
+  
+  
+      <span class="icon-box" slot="start" style="background-image: image-set(url(&quot;edge://favicon2/?size=16&amp;scaleFactor=1x&amp;pageUrl=http%3A%2F%2F47.102.204.218%3A5601%2Fapp%2Fhome%23%2F&amp;allowGoogleServerFallback=0&amp;pageTitle=Elastic&quot;) 1x, url(&quot;edge://favicon2/?size=16&amp;scaleFactor=2x&amp;pageUrl=http%3A%2F%2F47.102.204.218%3A5601%2Fapp%2Fhome%23%2F&amp;allowGoogleServerFallback=0&amp;pageTitle=Elastic&quot;) 2x)"></span>
+    
+              <a class="title fav-url" href="#" target="_blank" tabindex="-1">Elastic</a><span class="url">http://47.102.204.218:5601/app/home#/</span>
+          </label>
+        </fluent-field>
+        <fluent-button icon-only="" size="medium" appearance="subtle" slot="aside" title="Delete" aria-label="Elastic" tabindex="0"><template shadowrootmode="open">
+       <slot name="start"></slot> 
+      <span class="content" part="content">
+        <slot></slot>
+      </span>
+       <slot name="end"></slot> 
+    </template>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20" class="listItemCard_closeIcon-0-1-1139" aria-hidden="true"><path d="M4.09 4.22l.06-.07a.5.5 0 01.63-.06l.07.06L10 9.29l5.15-5.14a.5.5 0 01.63-.06l.07.06c.18.17.2.44.06.63l-.06.07L10.71 10l5.14 5.15c.18.17.2.44.06.63l-.06.07a.5.5 0 01-.63.06l-.07-.06L10 10.71l-5.15 5.14a.5.5 0 01-.63.06l-.07-.06a.5.5 0 01-.06-.63l.06-.07L9.29 10 4.15 4.85a.5.5 0 01-.06-.63l.06-.07-.06.07z" fill-rule="nonzero"></path></svg>
+        </fluent-button>
+      </fluent-tree-item>
+  
+    <fluent-tree-item size="medium" title="More" data-bookmark-id="48" data-is-folder="true" data-is-selected="false" aria-selected="false" draggable="true" tabindex="0" empty=""><template shadowrootmode="open">
+    <div class="positioning-region" part="positioning-region">
+      <div class="content" part="content">
+        <span class="chevron" part="chevron" aria-hidden="true">
+          <slot name="chevron">
+  <svg viewBox="0 0 12 12" fill="currentColor">
+    <path d="M4.65 2.15a.5.5 0 000 .7L7.79 6 4.65 9.15a.5.5 0 10.7.7l3.5-3.5a.5.5 0 000-.7l-3.5-3.5a.5.5 0 00-.7 0z"></path>
+  </svg>
+</slot>
+        </span>
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </div>
+      <div class="aside" part="aside">
+        <slot name="aside"></slot>
+      </div>
+    </div>
+    <div role="group" class="items" part="items">
+      <slot name="item"></slot>
+    </div>
+  </template>
+        <fluent-field label-position="after" slot="start" class="">
+          <fluent-checkbox slot="input" data-is-selected="false" id="per-fav-item-48" tabindex="0"><template shadowrootmode="open">
+            
+    <svg fill="currentColor" aria-hidden="true" class="checked-indicator" width="1em" height="1em" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04Z" fill="currentColor"></path>
+    </svg>
+ 
+    <span class="indeterminate-indicator"></span>
+
+        </template>
+          </fluent-checkbox>
+          <label slot="label" for="per-fav-item-48">
+            <!---->
+  
+      <span class="icon-box" slot="start">
+        
+        
+  <svg class="icon-folder-monoline" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" classname="icon-folder"><path d="M7.17 3c.27 0 .53.07.76.21l.14.09 1.6 1.2h5.83a2.5 2.5 0 012.48 2.17l.01.17L18 7v7.5a2.5 2.5 0 01-2.34 2.5H4.5A2.5 2.5 0 012 14.66V5.5A2.5 2.5 0 014.34 3h2.83zm.99 4.03a1.5 1.5 0 01-.94.46l-.15.01H3v7c0 .78.6 1.42 1.36 1.5H15.5c.78 0 1.42-.6 1.5-1.36V7c0-.78-.6-1.42-1.36-1.5H9.62L8.16 7.03zM7.16 4H4.5c-.78 0-1.42.6-1.5 1.36V6.5h4.07a.5.5 0 00.3-.1l.06-.06L8.7 5.02 7.47 4.1a.5.5 0 00-.22-.1h-.08z" fillrule="nonzero"></path></svg>
+
+      </span>
+    
+  
+              <!----><span class="title">More</span>
+          </label>
+        </fluent-field>
+        <fluent-button icon-only="" size="medium" appearance="subtle" slot="aside" title="Delete" aria-label="More" tabindex="0"><template shadowrootmode="open">
+       <slot name="start"></slot> 
+      <span class="content" part="content">
+        <slot></slot>
+      </span>
+       <slot name="end"></slot> 
+    </template>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20" class="listItemCard_closeIcon-0-1-1139" aria-hidden="true"><path d="M4.09 4.22l.06-.07a.5.5 0 01.63-.06l.07.06L10 9.29l5.15-5.14a.5.5 0 01.63-.06l.07.06c.18.17.2.44.06.63l-.06.07L10.71 10l5.14 5.15c.18.17.2.44.06.63l-.06.07a.5.5 0 01-.63.06l-.07-.06L10 10.71l-5.15 5.14a.5.5 0 01-.63.06l-.07-.06a.5.5 0 01-.06-.63l.06-.07L9.29 10 4.15 4.85a.5.5 0 01-.06-.63l.06-.07-.06.07z" fill-rule="nonzero"></path></svg>
+        </fluent-button>
+      </fluent-tree-item>
+  <!--fast-e6t4h9{fast-e6t4h9-165}fast-e6t4h9-->
+          </fluent-tree>
+
+        
+
+        
+
+      </section>
+      <fav-alert-dialog label=""><template shadowrootmode="open"><!---->
+  
+  </template></fav-alert-dialog>
+  </div>
+
+</template></fav-search-view>
+    </side-pane-layout>
+</template></fav-full-page>
+</template></fav-full-app>
+       <p role="status" aria-live="assertive" aria-atomic="false" style="position: fixed; top: -100px;">找到了与“mu77”相符的 3&nbsp;结果</p>
+       <script type="module" src="./favorites-full.js"></script>
+       <script "defer"="" src="edge://resources/js/edge-color-change-listener.js"> </script>
+     
+     </body>

@@ -1,0 +1,46 @@
+{
+  "name": "dsh-skill-center",
+  "version": "0.1.0",
+  "description": "Skill center for DeepSeek Harness: manage the harness skill library (list, enable, disable) from a sidebar entry directly above Settings. · DSH 技能中心：在左下角“设置”上方的入口里管理技能库（列出、启用、禁用）。",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "skill",
+    "skills"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node test/smoke.mjs && node test/categories.mjs && node test/sources.mjs && node test/client-smoke.mjs && node test/client-render.mjs && node test/host-integration.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ],
+      "platform": "web"
+    }
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md"
+  ]
+}
